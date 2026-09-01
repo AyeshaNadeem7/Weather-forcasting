@@ -52,12 +52,19 @@ OpenWeather API
 weather-broadcast/
 │
 ├── app.py
+
 ├── test-api.py
+
 ├── requirements.txt
+
 ├── README.md
+
 ├── .gitignore
+
 ├── api_key.txt          # Keep private - DO NOT upload
+
 └── .venv/               # Local virtual environment - DO NOT upload
+
 🔑 OpenWeather API Key
 
 This project uses the OpenWeather API.
