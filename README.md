@@ -83,20 +83,24 @@ Do not add quotes or extra text.
 
 Windows:
 
-python -m venv .venv
+2. python -m venv .venv
+
 3. Activate the virtual environment
+   
 .venv\Scripts\Activate.ps1
-4. Install dependencies
+
+5. Install dependencies
+   
 pip install -r requirements.txt
-5. Add your API key
 
-Create:
+7. Add your API key
 
-api_key.txt
+Create: api_key.txt
 
 and put your OpenWeather API key inside it.
 
 6. Run the application
+   
 streamlit run app.py
 
 The application will open in your browser.
