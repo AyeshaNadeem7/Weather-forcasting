@@ -3,30 +3,52 @@
 A professional, responsive weather dashboard built with Python and Streamlit, using the OpenWeather API to provide real-time weather information for major cities across Pakistan.
 
 ✨ Features
+
 🌍 Real-time weather information
+
 🇵🇰 15 Pakistani cities
+
 📍 Rawalpindi selected by default
+
 🔄 Dynamic city selection
+
 🌡️ Current temperature
+
 🤒 Feels-like temperature
+
 💧 Humidity
+
 💨 Wind speed and direction
+
 ☁️ Cloud coverage
+
 📊 Atmospheric pressure
+
 👁️ Visibility
+
 🌅 Sunrise and sunset times
+
 🌧️ Rain probability
+
 📝 Automatic weather summary
+
 🔄 Refresh weather button
+
 📱 Responsive professional interface
+
 🌙 Modern dark-themed dashboard
+
 🔐 API key stored separately from the source code
+
 🛠️ Technologies Used
+
 Python
 Streamlit
 Requests
 OpenWeather API
+
 📁 Project Structure
+
 weather-broadcast/
 │
 ├── app.py
@@ -51,22 +73,6 @@ The file should contain only your API key:
 YOUR_OPENWEATHER_API_KEY
 
 Do not add quotes or extra text.
-
-⚠️ Security
-
-Never upload api_key.txt to GitHub.
-
-Make sure your .gitignore contains:
-
-api_key.txt
-.venv/
-__pycache__/
-*.pyc
-🚀 Installation
-1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/weather-broadcast.git
-cd weather-broadcast
-2. Create a virtual environment
 
 Windows:
 
