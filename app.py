@@ -2,6 +2,8 @@ import streamlit as st
 import requests
 from datetime import datetime, timedelta
 import math
+import os
+
 
 try:
     from streamlit_folium import st_folium
@@ -418,18 +420,42 @@ hr {{
 # API KEY
 # ============================================================
 
+# try:
+#     with open("api_key.txt", "r") as file:
+#         API_KEY = file.read().strip()
+# except FileNotFoundError:
+#     st.error("❌ api_key.txt was not found.")
+#     st.stop()
+
+# if not API_KEY:
+#     st.error("❌ api_key.txt is empty.")
+#     st.stop()
+
+
+API_KEY = None
+
+# 1. Try retrieving from Streamlit Cloud Secrets safely
 try:
-    with open("api_key.txt", "r") as file:
-        API_KEY = file.read().strip()
-except FileNotFoundError:
-    st.error("❌ api_key.txt was not found.")
-    st.stop()
+    if "API_KEY" in st.secrets:
+        API_KEY = st.secrets["API_KEY"]
+except Exception:
+    # Safely skip if running locally without a local secrets.toml
+    pass
 
+# 2. Fall back to local api_key.txt if key was not found in Secrets
+if not API_KEY and os.path.exists("api_key.txt"):
+    try:
+        with open("api_key.txt", "r") as file:
+            API_KEY = file.read().strip()
+    except Exception as e:
+        st.error(f"❌ Error reading api_key.txt: {e}")
+        st.stop()
+
+# 3. Handle missing key error
 if not API_KEY:
-    st.error("❌ api_key.txt is empty.")
+    st.error("❌ API Key not found in Streamlit Secrets or api_key.txt.")
     st.stop()
-
-
+    
 # ============================================================
 # API HELPERS
 # ============================================================
